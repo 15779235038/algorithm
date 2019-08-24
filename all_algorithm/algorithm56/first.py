@@ -4,7 +4,7 @@ class Solution:
     def merge(self, intervals):
         # self.BubbleSore(intervals)
 
-        print(self.two_divide_straight_sort(intervals))
+        print(self.shell_sort(intervals))
         pass
 
 
@@ -276,7 +276,6 @@ class Solution:
 
 
     '''
-    
     希尔排序，看看
     先取一个小于n的整数d1作为第一个增量，把文件的全部记录分组。
     所有距离为d1的倍数的记录放在同一个组中。先在各组内进行直接插入排序；
@@ -288,8 +287,30 @@ class Solution:
     '''
 
     def shell_sort(self,lists):
-
         #增量序列
+        n = len(lists)
+        # temp_list = [i for i in range(0,n) if n/2 ]
+        h = 0
+        while h < n or h == n:
+            h = 3 * h + 1
+        print('生成初始增量'+str(h))
+        while h > 1 or h == 1:
+            for i in range(h, n):
+                j = i - h
+                temp = lists[i]
+                while (j > 0  or j == 0) and lists[j] > temp  :
+                    lists[j+h] = lists[j]
+                    j = j - h
+                lists[j + h] = temp
+            h = (h-1) // 3  # 递减增量
+            print('递减的增量变成了'+str(h))
+
+        return lists
+
+        #   quick _sort
+
+
+
 
 
 
