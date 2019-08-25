@@ -2,22 +2,24 @@
 from  first import *
 class Solution:
     def merge(self, intervals):
+
+        if  len(intervals) == 1 :
+            return intervals
         #先将数组进行按照第一位的排序。
         sore_1_list = self.shell_sort(intervals)
         print(sore_1_list)
         result_list = []
-        for j in range(1, len(intervals)):
-            # temp = []
-            if  intervals[j][0]  > intervals[j-1][0] and intervals[j][0]  < intervals[j-1][1]:
-                print('#可以合并的。'+str(intervals[j]) +'   '+str(intervals[j-1]))
-                result_list.append([intervals[j-1][0], intervals[j][1]])
-            # intervals[j-1]
+        # result_list.append()
+        for j in range(0, len(intervals)-1):
+            if (intervals[j+1][0]  > intervals[j][0]  or  intervals[j+1][0]  == intervals[j][0]) and (intervals[j+1][0]  > intervals[j][1] or  intervals[j+1][0]  == intervals[j][1]):
+                print('#可以合并的。'+str(intervals[j+1]) +'   '+str(intervals[j]))
+                result_list.append([intervals[j][0], intervals[j+1][1]])
             else:
+                if j == 0:
+                    result_list.append(intervals[0])
                 print('不要合并'+str(intervals[j]))
-                result_list.append(intervals[j])
-
-
-        print(result_list)
+                result_list.append(intervals[j+1])
+        return result_list
 
 
 
@@ -50,5 +52,5 @@ class Solution:
 
 
 test = Solution()
-test.merge([[1, 3], [2, 6], [8, 10], [15, 18]])
+print(test.merge([[1,4],[5,6]]))
 
