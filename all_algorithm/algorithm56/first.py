@@ -9,7 +9,6 @@ class Solution:
 
 
     '''
-    
     冒泡排序
     '''
     def BubbleSore(self,lists):
