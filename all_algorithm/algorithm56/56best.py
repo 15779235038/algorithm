@@ -52,5 +52,5 @@ class Solution:
 
 
 test = Solution()
-print(test.merge([[1,4],[5,6]]))
+print(test.merge([[1, 4], [5, 6]]))
 

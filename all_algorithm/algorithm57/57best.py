@@ -12,8 +12,11 @@ class Solution:
             # otherwise, there is overlap, so we merge the current and previous
             # intervals.
                 merged[-1][1]= max(merged[-1][1], interval[1])
-
         return merged
+
+
+
+
 
 
 test = Solution()

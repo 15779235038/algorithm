@@ -3,11 +3,8 @@
 class Solution:
     def merge(self, intervals):
         # self.BubbleSore(intervals)
-
         print(self.shell_sort(intervals))
         pass
-
-
     '''
     冒泡排序
     '''
@@ -87,8 +84,6 @@ class Solution:
                 new_list.append(mix)
 
         return new_list
-
-
 
 
     '''
