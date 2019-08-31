@@ -151,7 +151,7 @@ class Solution:
             j += 1
         return c
 
-    def merge_sort2(self,lists):
+    def merge_sort2(self, lists):
         if len(lists) <= 1:
             return lists
         middle = len(lists) // 2
