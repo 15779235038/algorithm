@@ -3,7 +3,7 @@
 class Solution:
     def merge(self, intervals):
         # self.BubbleSore(intervals)
-        print(self.shell_sort(intervals))
+        print(self.HeapSort(intervals))
         pass
     '''
     冒泡排序
