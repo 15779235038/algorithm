@@ -3,7 +3,7 @@
 class Solution:
     def merge(self, intervals):
         # self.BubbleSore(intervals)
-        print(self.HeapSort(intervals))
+        print(self.quick_sort(intervals))
         pass
     '''
     冒泡排序
@@ -301,36 +301,22 @@ class Solution:
 
         return lists
 
-        #   quick _sort
+        #   quick _sort快排实现
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def quick_sort(self,data):
+        """快速排序"""
+        if len(data) >= 2:  # 递归入口及出口
+            mid = data[len(data) // 2]  # 选取基准值，也可以选取第一个或最后一个元素
+            left, right = [], []  # 定义基准值左右两侧的列表
+            data.remove(mid)  # 从原始数组中移除基准值
+            for num in data:
+                if num >= mid:
+                    right.append(num)
+                else:
+                    left.append(num)
+            return self.quick_sort(left) + [mid] + self.quick_sort(right)
+        else:
+            return data
 
 
 testList=[4,3,7,5,10,2]
